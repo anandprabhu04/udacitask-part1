@@ -4,10 +4,13 @@ require_relative 'todolist.rb'
 the_bucket_list = TodoList.new("My Bucket List")
 
 # Add four new items
-the_bucket_list.add_item("Travel around the world")
-the_bucket_list.add_item("Drive a steam engine train")
-the_bucket_list.add_item("Swim along with Dolphins")
-the_bucket_list.add_item("Meet Arsene Wenger")
+#the_bucket_list.add_item("Travel around the world")
+#the_bucket_list.add_item("Drive a steam engine train")
+#the_bucket_list.add_item("Swim along with Dolphins")
+#the_bucket_list.add_item("Meet Arsene Wenger once")
+
+# Read from file
+the_bucket_list.read_from_file
 
 # Print the list
 the_bucket_list.print_list

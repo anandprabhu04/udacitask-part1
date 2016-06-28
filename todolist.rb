@@ -1,10 +1,18 @@
 class TodoList
+
   attr_reader :title, :items
 
   # Initialize todolist with list title and empty array of items
   def initialize(list_title)
     @title = list_title
     @items = Array.new # Empty array to start with
+  end
+
+  # Method to read the list of items from a file
+  def read_from_file
+    File.readlines('todolist.txt').each do |line|
+      add_item(line.chop)
+    end
   end
 
   # Method to add an item to todolist
@@ -55,27 +63,27 @@ end
 
 class Item
 
-    attr_reader :description, :completed_status
+  attr_reader :description, :completed_status
 
-    # Initialize item with a description and marked as not complete
-    def initialize(item_description)
-        @description = item_description
-        @completed_status = false
-    end
+  # Initialize item with a description and marked as not complete
+  def initialize(item_description)
+    @description = item_description
+    @completed_status = false
+  end
 
-    # Method to print the item
-    def print_item(position,item)
-        status = current_item_status(item) ? "Completed" : "Not Completed"
-        puts "#{position + 1} - #{item.description} \t- #{status}"        
-    end
+  # Method to print the item
+  def print_item(position,item)
+    status = current_item_status?(item) ? "Completed" : "Not Completed"
+    puts "#{position + 1} - #{item.description} \t- #{status}"        
+  end
 
-    # Method which returns a boolean value
-    def current_item_status(item)
-        item.completed_status
-    end
+  # Method which returns a boolean value
+  def current_item_status?(item)
+    item.completed_status
+  end
 
-    # Change the completed status to true
-    def change_completed_status(status)
-        @completed_status = status
-    end
+  # Change the completed status to true
+  def change_completed_status(status)
+    @completed_status = status
+  end
 end
