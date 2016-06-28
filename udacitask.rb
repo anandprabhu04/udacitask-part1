@@ -25,9 +25,13 @@ the_bucket_list.delete_item
 the_bucket_list.print_list
 
 # Update the completion status of the first item to complete
+the_bucket_list.update_completed_status!
 
 # Print the list
+the_bucket_list.print_list
 
 # Update the title of the list
+the_bucket_list.update_todolist_title
 
 # Print the list
+the_bucket_list.print_list
