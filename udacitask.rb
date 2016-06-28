@@ -13,12 +13,16 @@ the_bucket_list.add_item("Meet Arsene Wenger")
 the_bucket_list.print_list
 
 # Delete the first item
+the_bucket_list.delete_item
 
 # Print the list
+the_bucket_list.print_list
 
 # Delete the second item
+the_bucket_list.delete_item
 
 # Print the list
+the_bucket_list.print_list
 
 # Update the completion status of the first item to complete
 
