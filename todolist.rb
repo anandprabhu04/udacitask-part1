@@ -12,6 +12,16 @@ class TodoList
         item = Item.new(new_item)
         @items.push(item)
     end
+
+    # Method to print items in todolist
+    def print_list
+        puts "*" * 15
+        puts @title
+        puts "*" * 15
+        @items.each do |item|
+            item.print_item(item)
+        end
+    end
 end
 
 class Item
@@ -22,5 +32,10 @@ class Item
     def initialize(item_description)
         @description = item_description
         @completed_status = false
+    end
+
+    # Method to print the item
+    def print_item(item)
+        puts "#{item.description} - #{item.completed_status}"        
     end
 end
